@@ -6,7 +6,7 @@
 
 <script setup lang="ts">
 import {
-  useSlots, defineProps, computed, VNode, Component,
+  useSlots, computed, VNode, Component,
 } from 'vue';
 
 interface Props {

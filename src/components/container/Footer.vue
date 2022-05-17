@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import { withDefaults, defineProps } from 'vue';
+import { withDefaults } from 'vue';
 
 interface Props {
   height?: string
