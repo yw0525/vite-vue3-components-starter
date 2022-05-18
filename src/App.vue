@@ -1,4 +1,16 @@
 <template>
+  <custom-button type="primary">
+    按钮
+  </custom-button>
+  <custom-button type="success">
+    按钮
+  </custom-button>
+  <custom-button>按钮</custom-button>
+  <custom-button size="small">
+    按钮
+  </custom-button>
+  <hr>
+
   <custom-container>
     <custom-header>Header</custom-header>
     <custom-main>Main</custom-main>

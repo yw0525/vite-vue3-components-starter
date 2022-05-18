@@ -3,6 +3,8 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    node: true,
+    jest: true,
     'vue/setup-compiler-macros': true,
   },
   extends: [
@@ -19,5 +21,8 @@ module.exports = {
   ],
   rules: {
     'vue/no-multiple-template-root': 'off',
+    'import/no-extraneous-dependencies': 'off',
+    'import/extensions': 'off',
+    'import/no-unresolved': 'off',
   },
 };
