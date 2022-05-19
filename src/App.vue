@@ -11,6 +11,37 @@
   </custom-button>
   <hr>
 
+  <custom-form
+    ref="myForm"
+    :model="model"
+    :rules="rules"
+  >
+    <custom-form-item
+      label="用户名："
+      prop="username"
+    >
+      <custom-input v-model="model.username" />
+    </custom-form-item>
+    <custom-form-item
+      label="密码："
+      prop="password"
+    >
+      <custom-input
+        v-model="model.password"
+        type="password"
+      />
+    </custom-form-item>
+    <br>
+    <custom-form-item>
+      <custom-button
+        type="primary"
+        @click="login"
+      >
+        登 录
+      </custom-button>
+    </custom-form-item>
+  </custom-form>
+
   <custom-container>
     <custom-header>Header</custom-header>
     <custom-main>Main</custom-main>
@@ -37,7 +68,42 @@
   </custom-container>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { reactive, ref } from 'vue';
+import { FormType } from './components/form/typings';
+
+const model = reactive({
+  username: '',
+  password: '',
+});
+const rules = reactive({
+  username: [
+    {
+      required: true,
+      message: '请输入用户名！',
+    },
+  ],
+  password: [
+    {
+      required: true,
+      message: '请输入密码！',
+    },
+  ],
+});
+
+// 获取表单实例
+const myForm = ref<FormType>();
+
+const login = () => {
+  myForm.value?.validate((isValid) => {
+    if (isValid) {
+      console.log(model);
+    } else {
+      alert('请正确填写表单！');
+    }
+  });
+};
+</script>
 
 <style>
 body {

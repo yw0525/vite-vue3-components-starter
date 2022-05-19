@@ -135,7 +135,7 @@ $--button-large-padding-horizontal: 25px !default;
   }
 }
 
-// 添加ben后缀 el-button-state size啥的
+// 添加ben后缀 custom-button-state size啥的
 @mixin when($state) {
   @at-root {
     &.#{$state-prefix + $state} {
