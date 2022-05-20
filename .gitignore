@@ -28,3 +28,6 @@ coverage
 
 # Wakatime
 *.wakatime*
+
+# VitePress
+.vitepress
